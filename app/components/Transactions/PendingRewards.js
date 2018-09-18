@@ -9,10 +9,10 @@ export default class PendingReward extends Component {
     const accounts = this.props.account.accounts;
     const account = props.value;
     const permissions = this.props.keys.permissions;
-    const reward_sbd = accounts[account].reward_sbd_balance;
-    const reward_steem = accounts[account].reward_steem_balance;
+    const reward_bbd = accounts[account].reward_bbd_balance;
+    const reward_dpay = accounts[account].reward_dpay_balance;
     const reward_vests = accounts[account].reward_vesting_balance;
-    this.props.actions.useKey('claimRewardBalance', { account, reward_sbd, reward_steem, reward_vests }, permissions[account])
+    this.props.actions.useKey('claimRewardBalance', { account, reward_bbd, reward_dpay, reward_vests }, permissions[account])
   }
   render() {
     let display = false;
@@ -40,10 +40,10 @@ export default class PendingReward extends Component {
                   Account
                 </Table.HeaderCell>
                 <Table.HeaderCell>
-                  SBD
+                  BBD
                 </Table.HeaderCell>
                 <Table.HeaderCell>
-                  STEEM
+                  BEX
                 </Table.HeaderCell>
                 <Table.HeaderCell>
                   VESTS
@@ -65,8 +65,8 @@ export default class PendingReward extends Component {
                   <Table.Cell>
                     <AccountName name={account} />
                   </Table.Cell>
-                  <Table.Cell>{this.props.account.accounts[account].reward_sbd_balance.split(" ")[0]}</Table.Cell>
-                  <Table.Cell>{this.props.account.accounts[account].reward_steem_balance.split(" ")[0]}</Table.Cell>
+                  <Table.Cell>{this.props.account.accounts[account].reward_bbd_balance.split(" ")[0]}</Table.Cell>
+                  <Table.Cell>{this.props.account.accounts[account].reward_dpay_balance.split(" ")[0]}</Table.Cell>
                   <Table.Cell>{this.props.account.accounts[account].reward_vesting_balance.split(" ")[0]}</Table.Cell>
                 </Table.Row>
               ))}

@@ -2,17 +2,10 @@
 import React, { Component } from 'react';
 
 import { Button, Header, Modal, Segment, Table } from 'semantic-ui-react';
-import { Client } from 'dsteem';
+import { Client } from 'ddpays';
 
 const servers = [
-  'wss://gtg.steem.house:8090',
-  'wss://seed.bitcoiner.me',
-  'wss://rpc.buildteam.io',
-  'wss://steemd.pevo.science',
-  'wss://steemd.minnowsupportproject.org',
-  'wss://steemd.privex.io',
-  'wss://steemd.steemgigs.org',
-  'wss://wallet.steem.ws',
+  'wss://dpayd.dpays.io',
 ];
 
 export default class ServerSelect extends Component {
@@ -43,7 +36,7 @@ export default class ServerSelect extends Component {
     const { refreshGlobalProps, setPreference } = this.props.actions;
     clearInterval(this.interval);
     this.setState({ loading: true, open: false });
-    setPreference('steemd_node', server);
+    setPreference('dpayd_node', server);
     refreshGlobalProps();
   }
 
@@ -96,7 +89,7 @@ export default class ServerSelect extends Component {
         }
         >
           <Header attached="top">
-            Select a Steem server to connect to:
+            Select a dPay server to connect to:
           </Header>
           <Segment loading={this.state.loading}>
             <Table attached="bottom">

@@ -7,7 +7,7 @@ export default class AccountAvatar extends Component {
 
   handleLink = () => {
     const { name } = this.props;
-    shell.openExternal(`https://steemit.com/@${name}`);
+    shell.openExternal(`https://dsite.io/@${name}`);
   }
 
   render() {
@@ -16,7 +16,7 @@ export default class AccountAvatar extends Component {
       <a
         onClick={this.handleLink}
         style={{
-          backgroundImage: `url(https://steemitimages.com/u/${name || 'steemit'}/avatar/medium)`,
+          backgroundImage: `url(https://dsiteimages.com/u/${name || 'dsite'}/avatar/medium)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

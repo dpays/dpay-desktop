@@ -54,7 +54,7 @@ const opTemplates = {
   },
   convert: {
     color: 'orange',
-    message: (op) => `Convert ${op.amount} to equiv Steem (5 day wait).`
+    message: (op) => `Convert ${op.amount} to equiv BEX (5 day wait).`
   },
   delegate_vesting_shares: {
     color: 'orange',
@@ -82,7 +82,7 @@ const opTemplates = {
   },
   transfer_to_vesting: {
     color: 'red',
-    message: (op) => `Send ${op.to} ${op.amount} as Steem Power.`
+    message: (op) => `Send ${op.to} ${op.amount} as BEX Power.`
   },
   vote: {
     color: 'green',
@@ -118,8 +118,8 @@ export default class OperationsPrompt extends Component {
       if(meta.prompt) {
         switch(meta.type) {
           case "asset":
-          case "sbd":
-          case "steem":
+          case "bbd":
+          case "dpay":
             return (
               <OperationsPromptFieldAsset
                 field={field}
@@ -148,7 +148,7 @@ export default class OperationsPrompt extends Component {
                 meta={meta}
                 modifyOpsPrompt={this.props.modifyOpsPrompt}
                 opData={opData}
-                steem={this.props.steem}
+                dpay={this.props.dpay}
               />
             )
             break;
@@ -201,8 +201,8 @@ export default class OperationsPrompt extends Component {
       switch(ops[0][0]) {
         case 'delegate_vesting_shares':
           return [
-            <Header attached='top' key='op-header'><Icon name='power' />Delegate Steem Power</Header>,
-            <OperationsPromptDelegation account={this.props.account} opData={opData} steem={this.props.steem} />
+            <Header attached='top' key='op-header'><Icon name='power' />Delegate BEX Power</Header>,
+            <OperationsPromptDelegation account={this.props.account} opData={opData} dpay={this.props.dpay} />
           ]
         case 'transfer':
           return [
@@ -212,7 +212,7 @@ export default class OperationsPrompt extends Component {
         case 'vote':
           return [
             <Header attached='top' key='op-header'><Icon name='thumbs up' />Vote on a Post</Header>,
-            <OperationsPromptVote opData={opData} steem={this.props.steem} />
+            <OperationsPromptVote opData={opData} dpay={this.props.dpay} />
           ]
       }
     }

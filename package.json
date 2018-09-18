@@ -1,8 +1,8 @@
 {
-  "name": "vessel",
-  "productName": "vessel",
-  "version": "0.2.8",
-  "description": "A simple wallet for managing your Steem accounts.",
+  "name": "dwallet",
+  "productName": "dwallet",
+  "version": "0.1.1",
+  "description": "A simple wallet for managing your dPay accounts.",
   "scripts": {
     "test": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 node --trace-warnings ./test/runTests.js",
     "test-all": "npm run lint && npm run flow && npm run test && npm run build && npm run test-e2e",
@@ -34,7 +34,7 @@
   "browserslist": "electron 1.8",
   "build": {
     "productName": "Vessel",
-    "appId": "com.greymass.vessel",
+    "appId": "com.dweb.dwallet",
     "files": [
       "dist/",
       "node_modules/",
@@ -45,11 +45,11 @@
     ],
     "protocols": [
       {
-        "name": "steem",
+        "name": "dpay",
         "role": "Viewer",
         "schemes": [
-          "steem",
-          "vessel"
+          "dpay",
+          "dwallet"
         ]
       }
     ],
@@ -80,16 +80,16 @@
     "linux": {
       "category": "Network",
       "desktop": {
-        "Name": "vessel",
-        "Version": "0.2.2",
-        "GenericName": "Steem Client",
-        "X-GNOME-FullName": "vessel",
-        "Comment": "A simple wallet for managing your Steem accounts.",
+        "Name": "dpay-desktop",
+        "Version": "0.1.0",
+        "GenericName": "dPay Client",
+        "X-GNOME-FullName": "dwallet",
+        "Comment": "A simple wallet for managing your dPay accounts.",
         "Type": "Application",
         "Terminal": "false",
         "StartupNotify": "false",
         "Categories": "Network;",
-        "MimeType": "application/x-steem;x-scheme-handler/steem;"
+        "MimeType": "application/x-dpay;x-scheme-handler/dpay;"
       },
       "icon": "assets/icons/png",
       "target": [
@@ -104,23 +104,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aaroncox/vessel.git"
+    "url": "git+https://github.com/dpays/dwallet.git"
   },
   "author": {
-    "name": "Aaron Cox",
-    "email": "aaron@greymass.com",
-    "url": "https://github.com/aaroncox"
+    "name": "dPay, DAO",
+    "email": "labs@dpays.io",
+    "url": "https://github.com/dpays"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aaroncox/vessel/issues"
+    "url": "https://github.com/dpays/dwallet/issues"
   },
   "keywords": [
-    "steem",
+    "dpay",
     "blockchain",
     "wallet"
   ],
-  "homepage": "https://github.com/aaroncox/vessel",
+  "homepage": "https://github.com/dpays/dwallet",
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",
@@ -214,7 +214,8 @@
     "bip39": "^2.3.0",
     "bufferutil": "^3.0.0",
     "crypto-js": "^3.1.9-1",
-    "dsteem": "^0.6.0",
+    "dpayjs": "~0.7.4",
+    "ddpays": "^0.6.0",
     "electron-config": "^1.0.0",
     "electron-debug": "^1.1.0",
     "electron-json-storage": "^3.0.5",
@@ -240,7 +241,6 @@
     "redux-thunk": "^2.2.0",
     "semantic-ui-react": "^0.68.3",
     "source-map-support": "^0.4.15",
-    "steem": "^0.6.4",
     "url-parse": "^1.2.0",
     "utf-8-validate": "^3.0.1"
   },

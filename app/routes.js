@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router';
-import steem from 'steem';
+import dpay from 'dpayjs';
 
 import App from './containers/App';
 import AdvancedPage from './containers/AdvancedPage';
@@ -18,10 +18,10 @@ import VestingPage from './containers/VestingPage';
 import DecryptPrompt from './containers/DecryptPrompt';
 import ServerStatus from './containers/ServerStatus';
 
-import * as SteemActions from './actions/steem';
+import * as DPayActions from './actions/dpay';
 
-// steem.config.set('websocket', 'wss://api.steemit.com')
-// // steem.api.getAccountHistory('jesta', -1, 1000, function(err, result) {
+// dpay.config.set('websocket', 'wss://api.dpayit.com')
+// // dpay.api.getAccountHistory('jesta', -1, 1000, function(err, result) {
 // //   console.log(err, result);
 // // });
 
@@ -40,23 +40,23 @@ class Routes extends Component {
   changeNode(url) {
     if (url && this.isURL(url)) {
       // If it's a valid URL, set
-      steem.api.setWebSocket(url);
+      dpay.api.setWebSocket(url);
     } else {
       // Otherwise set to the rpc.buildteam.io node
-      steem.api.setWebSocket('https://rpc.buildteam.io');
+      dpay.api.setWebSocket('https://dpayd.dpays.io');
     }
     // Force a refresh immediately after change
     this.props.actions.refreshGlobalProps();
   }
 
   componentWillMount() {
-    if (this.props.preferences && this.props.preferences.steemd_node) {
-      this.changeNode(this.props.preferences.steemd_node)
+    if (this.props.preferences && this.props.preferences.dpayd_node) {
+      this.changeNode(this.props.preferences.dpayd_node)
     }
   }
   componentWillReceiveProps(nextProps) {
-    const nextNode = nextProps.preferences.steemd_node
-    const thisNode = this.props.preferences.steemd_node
+    const nextNode = nextProps.preferences.dpayd_node
+    const thisNode = this.props.preferences.dpayd_node
     if (nextNode !== thisNode) {
       this.changeNode(nextNode)
     }
@@ -110,14 +110,14 @@ function mapStateToProps(state) {
     location: state.location,
     preferences: state.preferences,
     router: state.router,
-    steem: state.steem,
+    dpay: state.dpay,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators({
-      ...SteemActions
+      ...DPayActions
     }, dispatch)
   };
 }

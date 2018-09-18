@@ -10,7 +10,7 @@ export default class RPC extends Component {
    e: SyntheticEvent
  ) => {
     const { setPreference } = this.props.actions;
-    setPreference('steemd_node', e.steemd_node);
+    setPreference('dpayd_node', e.dpayd_node);
  }
 
   render() {
@@ -18,9 +18,9 @@ export default class RPC extends Component {
       <Form onValidSubmit={this.onValidSubmit}>
 
         <Header>
-          Preferred Steem Node
+          Preferred dPay Node
           <Header.Subheader>
-            Configure which Steem node your wallet connects to in order to broadcast transactions.
+            Configure which dPay node your wallet connects to in order to broadcast transactions.
           </Header.Subheader>
         </Header>
 
@@ -28,19 +28,19 @@ export default class RPC extends Component {
           <Grid>
             <Grid.Column width={9}>
               <Form.Input
-                label="Steem RPC Node"
-                name="steemd_node"
+                label="dPay RPC Node"
+                name="dpayd_node"
                 instantValidation
                 validations="isUrl"
                 validationErrors={{
                   isUrl: 'Requires a valid URL starting with http:// or https://'
                 }}
                 errorLabel={ <Label color="red" pointing /> }
-                value={this.props.preferences.steemd_node}
+                value={this.props.preferences.dpayd_node}
               />
             </Grid.Column>
             <Grid.Column width={7}>
-              <Form.Button color='blue' content='Update' label={`Currently: ${this.props.preferences.steemd_node}`}/>
+              <Form.Button color='blue' content='Update' label={`Currently: ${this.props.preferences.dpayd_node}`}/>
             </Grid.Column>
           </Grid>
         </Segment>

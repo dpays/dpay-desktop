@@ -1,13 +1,13 @@
 {
-  "name": "vessel",
-  "productName": "vessel",
-  "version": "0.2.8",
-  "description": "A simple wallet for managing your Steem accounts.",
+  "name": "dwallet",
+  "productName": "dwallet",
+  "version": "0.1.1",
+  "description": "A simple wallet for managing your dPay accounts.",
   "main": "./main.prod.js",
   "author": {
-    "name": "Aaron Cox",
-    "email": "aaron@greymass.com",
-    "url": "https://github.com/aaroncox"
+    "name": "dPay Labs",
+    "email": "labs@dpays.io",
+    "url": "https://github.com/dpays"
   },
   "scripts": {
     "postinstall": "npm rebuild --runtime=electron --target=1.6.6 --disturl=https://atom.io/download/atom-shell --build-from-source"

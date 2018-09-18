@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import steem from 'steem';
+import dpay from 'dpayjs';
 import { Button, Checkbox, Divider, Form, Grid, Header, Message, Segment, Table } from 'semantic-ui-react';
 
 export default class KeysMemo extends Component {
@@ -31,9 +31,9 @@ export default class KeysMemo extends Component {
 
   validate = (newState) => {
     const errors = {};
-    errors.wif_error_invalid = !steem.auth.isWif(newState.wif);
+    errors.wif_error_invalid = !dpay.auth.isWif(newState.wif);
     errors.wif_not_valid = true;
-    if (newState.wif && steem.auth.wifIsValid(newState.wif, newState.public) === true) {
+    if (newState.wif && dpay.auth.wifIsValid(newState.wif, newState.public) === true) {
       errors.wif_not_valid = false;
     }
     return errors;

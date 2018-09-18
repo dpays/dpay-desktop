@@ -22,7 +22,7 @@ class VestingsPage extends Component {
           <Header
             icon="lightning"
             content="Vesting Schedule"
-            subheader="Steem Power (aka SP aka VESTS) can be converted to liquid STEEM using a process called 'Powering Down' which takes 13 weeks to complete. During the 13 weeks, every 7 days, 1/13th of the amount choosen to withdraw will be credited to your account. You can interrupt this process at any time."
+            subheader="BEX Power (aka BP aka VESTS) can be converted to liquid BEX using a process called 'Powering Down' which takes 13 weeks to complete. During the 13 weeks, every 7 days, 1/13th of the amount choosen to withdraw will be credited to your account. You can interrupt this process at any time."
           />
         </Segment>
         <VestingAccounts {...this.props} />
@@ -38,7 +38,7 @@ function mapStateToProps(state) {
     keys: state.keys,
     preferences: state.preferences,
     processing: state.processing,
-    steem: state.steem
+    dpay: state.dpay
   };
 }
 

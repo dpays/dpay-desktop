@@ -1,13 +1,13 @@
 // @flow
-import steem from 'steem';
+import dpay from 'dpayjs';
 import * as ProcessingActions from './processing';
 
-export const STEEM_GLOBALPROPS_UPDATE = 'STEEM_GLOBALPROPS_UPDATE';
-export const STEEM_GLOBALPROPS_UPDATE_RESOLVED = 'STEEM_GLOBALPROPS_UPDATE_RESOLVED';
+export const DPAY_GLOBALPROPS_UPDATE = 'DPAY_GLOBALPROPS_UPDATE';
+export const DPAY_GLOBALPROPS_UPDATE_RESOLVED = 'DPAY_GLOBALPROPS_UPDATE_RESOLVED';
 
 export function refreshGlobalProps() {
   return (dispatch: () => void) => {
-    steem.api.getDynamicGlobalProperties((err, results) => {
+    dpay.api.getDynamicGlobalProperties((err, results) => {
       if (err) {
         // dispatch({
         //   type: ACCOUNT_DATA_UPDATE_FAILED,
@@ -15,7 +15,7 @@ export function refreshGlobalProps() {
         // });
       } else {
         dispatch({
-          type: STEEM_GLOBALPROPS_UPDATE_RESOLVED,
+          type: DPAY_GLOBALPROPS_UPDATE_RESOLVED,
           payload: results
         });
       }

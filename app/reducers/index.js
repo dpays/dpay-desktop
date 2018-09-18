@@ -7,7 +7,7 @@ import account from './account';
 import keys from './keys';
 import preferences from './preferences';
 import processing from './processing';
-import steem from './steem';
+import dpay from './dpay';
 
 
 const rootReducer = combineReducers({
@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   router,
   preferences,
   processing,
-  steem,
+  dpay,
   intl: intlReducer
 });
 

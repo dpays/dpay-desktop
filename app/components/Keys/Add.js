@@ -21,9 +21,9 @@ export default class Welcome extends Component {
       <Segment.Group>
         <Segment padded>
           <Header>
-            Import a steemit.com account
+            Import a dPayID
             <Header.Subheader>
-              By using your steemit.com username and password, your private
+              By using your dPayID and password, your private
               keys can be derived and imported into your wallet.
             </Header.Subheader>
           </Header>
@@ -31,9 +31,9 @@ export default class Welcome extends Component {
             color="green"
             size="large"
             onClick={this.handleMethodChange}
-            value="login-steemit"
+            value="login-dsite"
           >
-            Import a steemit.com account
+            Import a dPayID
           </Button>
         </Segment>
         <Segment padded>
@@ -58,8 +58,7 @@ export default class Welcome extends Component {
             Experimental - Generate New Private Keys
             <Header.Subheader>
               For advanced users.
-              Create a new set of public and private keys for a new Steem
-              account. These <strong>public</strong> keys can then be given
+              Create a new set of public and private keys for a new dPayID. These <strong>public</strong> keys can then be given
               to another user or service allowing the creation of an account.
             </Header.Subheader>
           </Header>
@@ -83,7 +82,7 @@ export default class Welcome extends Component {
           />
         );
         break;
-      case 'login-steemit':
+      case 'login-dsite':
         display = (
           <KeysLogin
             handleMethodReset={this.handleMethodReset}

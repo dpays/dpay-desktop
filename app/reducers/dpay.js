@@ -1,8 +1,8 @@
 // @flow
 import {
-  STEEM_GLOBALPROPS_UPDATE,
-  STEEM_GLOBALPROPS_UPDATE_RESOLVED
-} from '../actions/steem';
+  DPAY_GLOBALPROPS_UPDATE,
+  DPAY_GLOBALPROPS_UPDATE_RESOLVED
+} from '../actions/dpay';
 
 type actionType = {
   type: string,
@@ -18,7 +18,7 @@ const defaultProps = {
 export default function account(state: any = defaultProps, action: actionType) {
   // console.log('>>> reducers/account', state, action);
   switch (action.type) {
-    case STEEM_GLOBALPROPS_UPDATE_RESOLVED:
+    case DPAY_GLOBALPROPS_UPDATE_RESOLVED:
       return Object.assign({}, state, {
         props: action.payload
       });

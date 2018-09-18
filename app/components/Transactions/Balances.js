@@ -7,30 +7,30 @@ import AccountName from '../global/AccountName';
 
 export default class PendingReward extends Component {
   getBalances(data) {
-    const props = this.props.steem.props;
-    const totalVestsSteem = parseFloat(props.total_vesting_fund_steem.split(' ')[0])
+    const props = this.props.dpay.props;
+    const totalVestsDPay = parseFloat(props.total_vesting_fund_dpay.split(' ')[0])
     const totalVests = parseFloat(props.total_vesting_shares.split(' ')[0])
     const mapping = {
-      SBD: ['sbd_balance'],
-      SBD_SAVINGS: ['savings_sbd_balance'],
-      STEEM: ['balance'],
-      STEEM_SAVINGS: ['savings_balance'],
+      BBD: ['bbd_balance'],
+      BBD_SAVINGS: ['savings_bbd_balance'],
+      BEX: ['balance'],
+      BEX_SAVINGS: ['savings_balance'],
       VESTS: ['vesting_shares']
     };
     const balances = {
-      SBD: 0,
-      SBD_SAVINGS: 0,
-      STEEM: 0,
-      STEEM_SAVINGS: 0,
+      BBD: 0,
+      BBD_SAVINGS: 0,
+      BEX: 0,
+      BEX_SAVINGS: 0,
       VESTS: 0,
-      SP: 0
+      BP: 0
     };
     if (!data) {
       return {
-        SBD: <Icon name="asterisk" loading />,
-        STEEM: <Icon name="asterisk" loading />,
+        BBD: <Icon name="asterisk" loading />,
+        BEX: <Icon name="asterisk" loading />,
         VESTS: <Icon name="asterisk" loading />,
-        SP: <Icon name="asterisk" loading />
+        BP: <Icon name="asterisk" loading />
       };
     }
     _.forOwn(mapping, (fields: Array, assignment: string) => {
@@ -39,12 +39,12 @@ export default class PendingReward extends Component {
         balances[assignment] += parseFloat(value);
       });
     });
-    balances.SP = totalVestsSteem * balances.VESTS / totalVests;
+    balances.BP = totalVestsDPay * balances.VESTS / totalVests;
     return balances;
   }
   render() {
     let display = false;
-    if (this.props.steem.props) {
+    if (this.props.dpay.props) {
       const accounts = this.props.account.accounts;
       const names = this.props.keys.names;
       const t = this;
@@ -52,10 +52,10 @@ export default class PendingReward extends Component {
         return (accounts && accounts[account]) ? t.getBalances(accounts[account]) : {};
       });
       const totals = {
-        SBD: balances.reduce((SBD, balance) => SBD + parseFloat(balance.SBD) + parseFloat(balance.SBD_SAVINGS), 0),
-        STEEM: balances.reduce((STEEM, balance) => STEEM + parseFloat(balance.STEEM) + parseFloat(balance.STEEM_SAVINGS), 0),
+        BBD: balances.reduce((BBD, balance) => BBD + parseFloat(balance.BBD) + parseFloat(balance.BBD_SAVINGS), 0),
+        BEX: balances.reduce((BEX, balance) => BEX + parseFloat(balance.BEX) + parseFloat(balance.BEX_SAVINGS), 0),
         VESTS: balances.reduce((VESTS, balance) => VESTS + parseFloat(balance.VESTS), 0),
-        SP: balances.reduce((SP, balance) => SP + parseFloat(balance.SP), 0),
+        BP: balances.reduce((BP, balance) => BP + parseFloat(balance.BP), 0),
       };
       const numberFormat = {
         shortFormat: true,
@@ -69,16 +69,16 @@ export default class PendingReward extends Component {
           <Segment>
             <Statistic.Group size="tiny" widths="four">
               <Statistic
-                value={<NumericLabel params={numberFormat}>{totals.SBD}</NumericLabel>}
-                label="SBD"
+                value={<NumericLabel params={numberFormat}>{totals.BBD}</NumericLabel>}
+                label="BBD"
               />
               <Statistic
-                value={<NumericLabel params={numberFormat}>{totals.STEEM}</NumericLabel>}
-                label="STEEM"
+                value={<NumericLabel params={numberFormat}>{totals.BEX}</NumericLabel>}
+                label="BEX"
               />
               <Statistic
-                value={<NumericLabel params={numberFormat}>{totals.SP}</NumericLabel>}
-                label="SP"
+                value={<NumericLabel params={numberFormat}>{totals.BP}</NumericLabel>}
+                label="BP"
               />
               <Statistic
                 value={<NumericLabel params={numberFormat}>{totals.VESTS}</NumericLabel>}
@@ -111,19 +111,19 @@ export default class PendingReward extends Component {
                   Name
                 </Table.HeaderCell>
                 <Table.HeaderCell textAlign="right">
-                  SBD
+                  BBD
                 </Table.HeaderCell>
                 <Table.HeaderCell textAlign="right">
-                  STEEM
+                  BEX
                 </Table.HeaderCell>
                 <Table.HeaderCell textAlign="right">
-                  SBD
+                  BBD
                 </Table.HeaderCell>
                 <Table.HeaderCell textAlign="right">
-                  STEEM
+                  BEX
                 </Table.HeaderCell>
                 <Table.HeaderCell textAlign="right">
-                  SP
+                  BP
                 </Table.HeaderCell>
                 <Table.HeaderCell textAlign="right">
                   VESTS
@@ -137,19 +137,19 @@ export default class PendingReward extends Component {
                     <AccountName name={account} />
                   </Table.Cell>
                   <Table.Cell textAlign="right">
-                    <NumericLabel params={numberFormat}>{balances[i].SBD}</NumericLabel>
+                    <NumericLabel params={numberFormat}>{balances[i].BBD}</NumericLabel>
                   </Table.Cell>
                   <Table.Cell textAlign="right">
-                    <NumericLabel params={numberFormat}>{balances[i].STEEM}</NumericLabel>
+                    <NumericLabel params={numberFormat}>{balances[i].BEX}</NumericLabel>
                   </Table.Cell>
                   <Table.Cell textAlign="right">
-                    <NumericLabel params={numberFormat}>{balances[i].SBD_SAVINGS}</NumericLabel>
+                    <NumericLabel params={numberFormat}>{balances[i].BBD_SAVINGS}</NumericLabel>
                   </Table.Cell>
                   <Table.Cell textAlign="right">
-                    <NumericLabel params={numberFormat}>{balances[i].STEEM_SAVINGS}</NumericLabel>
+                    <NumericLabel params={numberFormat}>{balances[i].BEX_SAVINGS}</NumericLabel>
                   </Table.Cell>
                   <Table.Cell textAlign="right">
-                    <NumericLabel params={numberFormat}>{balances[i].SP}</NumericLabel>
+                    <NumericLabel params={numberFormat}>{balances[i].BP}</NumericLabel>
                   </Table.Cell>
                   <Table.Cell textAlign="right">
                     <NumericLabel params={numberFormat}>{balances[i].VESTS}</NumericLabel>

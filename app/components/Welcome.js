@@ -9,7 +9,7 @@ import KeysImport from './Keys/Import';
 import KeysLogin from './Keys/Login';
 import PreferredNode from './global/PreferredNode'
 
-const logo = require('../img/steem.png');
+const logo = require('../img/dpay.png');
 const { shell } = require('electron');
 
 export default class Welcome extends Component {
@@ -19,7 +19,7 @@ export default class Welcome extends Component {
   }
 
   handleAuthorLink = () => {
-    shell.openExternal('https://steemit.com/@jesta');
+    shell.openExternal('https://dsite.io/@dpay');
   }
 
   render() {
@@ -40,13 +40,13 @@ export default class Welcome extends Component {
                 Vessel
                 <Header.Subheader>
                   <p>
-                    Desktop wallet for the Steem Blockchain
+                    Desktop wallet for the dPay Blockchain
                   </p>
                   <p>
                     Created by
                     {' '}
                     <a onClick={this.handleAuthorLink}>
-                      jesta
+                      @dpaylabs
                     </a>
                   </p>
                 </Header.Subheader>
@@ -59,7 +59,7 @@ export default class Welcome extends Component {
                 <Header>
                   Getting Started
                   <Header.Subheader>
-                    To get started with Vessel, an account must be added to the wallet.
+                    To get started with dWallet, an account must be added to the wallet.
                   </Header.Subheader>
                 </Header>
 

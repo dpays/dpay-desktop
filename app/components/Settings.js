@@ -18,7 +18,7 @@ export default class Settings extends Component {
    e: SyntheticEvent
  ) => {
     const { setPreference } = this.props.actions;
-    setPreference('steemd_node', e.steemd_node);
+    setPreference('dpayd_node', e.dpayd_node);
  }
 
   render() {
@@ -47,18 +47,18 @@ export default class Settings extends Component {
             </Header>
             <Form.Group widths="equal">
               <Form.Input
-                label="SBD Memo (Unencrypted)"
-                name="bittrex_sbd"
-                value={this.props.preferences.bittrex_sbd}
+                label="BBD Memo (Unencrypted)"
+                name="bittrex_bbd"
+                value={this.props.preferences.bittrex_bbd}
                 onChange={this.handleChange}
-                placeholder="Enter your SBD Unencrypted Memo key for Bittrex"
+                placeholder="Enter your BBD Unencrypted Memo key for Bittrex"
               />
               <Form.Input
-                label="STEEM Memo (Unencrypted)"
-                name="bittrex_steem"
-                value={this.props.preferences.bittrex_steem}
+                label="BEX Memo (Unencrypted)"
+                name="bittrex_dpay"
+                value={this.props.preferences.bittrex_dpay}
                 onChange={this.handleChange}
-                placeholder="Enter your STEEM Unencrypted Memo key for Bittrex"
+                placeholder="Enter your BEX Unencrypted Memo key for Bittrex"
               />
             </Form.Group>
           </Segment>
@@ -68,18 +68,18 @@ export default class Settings extends Component {
             </Header>
             <Form.Group widths="equal">
               <Form.Input
-                label="SBD Memo (Unencrypted)"
-                name="openledger_sbd"
-                value={this.props.preferences.openledger_sbd}
+                label="BBD Memo (Unencrypted)"
+                name="openledger_bbd"
+                value={this.props.preferences.openledger_bbd}
                 onChange={this.handleChange}
-                placeholder="Enter your SBD Unencrypted Memo key for OpenLedger"
+                placeholder="Enter your BBD Unencrypted Memo key for OpenLedger"
               />
               <Form.Input
-                label="STEEM Memo (Unencrypted)"
-                name="openledger_steem"
-                value={this.props.preferences.openledger_steem}
+                label="BEX Memo (Unencrypted)"
+                name="openledger_dpay"
+                value={this.props.preferences.openledger_dpay}
                 onChange={this.handleChange}
-                placeholder="Enter your STEEM Unencrypted Memo key for OpenLedger"
+                placeholder="Enter your BEX Unencrypted Memo key for OpenLedger"
               />
             </Form.Group>
           </Segment>
@@ -89,18 +89,18 @@ export default class Settings extends Component {
             </Header>
             <Form.Group widths="equal">
               <Form.Input
-                label="SBD Memo (Unencrypted)"
-                name="poloniex_sbd"
-                value={this.props.preferences.poloniex_sbd}
+                label="BBD Memo (Unencrypted)"
+                name="poloniex_bbd"
+                value={this.props.preferences.poloniex_bbd}
                 onChange={this.handleChange}
-                placeholder="Enter your SBD Unencrypted Memo key for Poloniex"
+                placeholder="Enter your BBD Unencrypted Memo key for Poloniex"
               />
               <Form.Input
-                label="STEEM Memo (Unencrypted)"
-                name="poloniex_steem"
-                value={this.props.preferences.poloniex_steem}
+                label="BEX Memo (Unencrypted)"
+                name="poloniex_dpay"
+                value={this.props.preferences.poloniex_dpay}
                 onChange={this.handleChange}
-                placeholder="Enter your STEEM Unencrypted Memo key for Poloniex"
+                placeholder="Enter your BEX Unencrypted Memo key for Poloniex"
               />
             </Form.Group>
           </Segment>
