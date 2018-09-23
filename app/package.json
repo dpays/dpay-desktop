@@ -1,6 +1,6 @@
 {
-  "name": "dwallet",
-  "productName": "dwallet",
+  "name": "dpay",
+  "productName": "dPay",
   "version": "0.1.1",
   "description": "A simple wallet for managing your dPay accounts.",
   "main": "./main.prod.js",

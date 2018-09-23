@@ -125,7 +125,7 @@ export default class KeysGenerate extends Component {
         <p>Create a new set of public and private keys for a new dPayID.</p>
         <p>This is a multi-step process and requires either using a service or knowing another user to complete.</p>
         <ul>
-          <li>Using Vessel, generate mnemonic phrase along with a set of keys.</li>
+          <li>Using dPay Wallet, generate mnemonic phrase along with a set of keys.</li>
           <li>Send the <strong>Public Key JSON</strong> to a service or user for account creation.</li>
           <li>Once the account has been created, use your mnemonic seed to load the wallet with your key.</li>
         </ul>

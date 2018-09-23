@@ -1,6 +1,6 @@
-# dWallet - dPay Desktop Wallet
+# dPay Desktop Wallet
 
-Vessel is a lite wallet for the dPay blockchain that you can run on your desktop computer without needing to run the blockchain itself.
+dPay Wallet is a lite wallet for the dPay blockchain that you can run on your desktop computer without needing to run the blockchain itself.
 
 **This is experimental and messy software at the moment, please use with caution.**
 

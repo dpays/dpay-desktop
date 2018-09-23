@@ -37,7 +37,7 @@ export default class Welcome extends Component {
                 }}
               />
               <Header size="large">
-                Vessel
+                dPay
                 <Header.Subheader>
                   <p>
                     Desktop wallet for the dPay Blockchain
@@ -59,7 +59,7 @@ export default class Welcome extends Component {
                 <Header>
                   Getting Started
                   <Header.Subheader>
-                    To get started with dWallet, an account must be added to the wallet.
+                    To get started with dPay Wallet, an account must be added to the wallet.
                   </Header.Subheader>
                 </Header>
 

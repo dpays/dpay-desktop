@@ -20,7 +20,7 @@ class SettingsPage extends Component {
           <Header
             icon="settings"
             content="Wallet Settings"
-            subheader="Configuration for Vessel wallets."
+            subheader="Configuration for dPay wallets."
           />
         </Segment>
         <Settings {...this.props} />

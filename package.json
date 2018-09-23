@@ -1,7 +1,7 @@
 {
-  "name": "dwallet",
-  "productName": "dwallet",
-  "version": "0.1.1",
+  "name": "dpay-desktop",
+  "productName": "dpay",
+  "version": "0.1.2",
   "description": "A simple wallet for managing your dPay accounts.",
   "scripts": {
     "test": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 node --trace-warnings ./test/runTests.js",
@@ -33,8 +33,8 @@
   },
   "browserslist": "electron 1.8",
   "build": {
-    "productName": "Vessel",
-    "appId": "com.dweb.dwallet",
+    "productName": "dPay",
+    "appId": "com.dweb.dpay",
     "files": [
       "dist/",
       "node_modules/",
@@ -49,7 +49,7 @@
         "role": "Viewer",
         "schemes": [
           "dpay",
-          "dwallet"
+          "dpaywallet"
         ]
       }
     ],
@@ -83,7 +83,7 @@
         "Name": "dpay-desktop",
         "Version": "0.1.0",
         "GenericName": "dPay Client",
-        "X-GNOME-FullName": "dwallet",
+        "X-GNOME-FullName": "dpay",
         "Comment": "A simple wallet for managing your dPay accounts.",
         "Type": "Application",
         "Terminal": "false",
@@ -104,7 +104,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dpays/dwallet.git"
+    "url": "git+https://github.com/dpays/dpay-desktop.git"
   },
   "author": {
     "name": "dPay, DAO",
@@ -113,14 +113,14 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dpays/dwallet/issues"
+    "url": "https://github.com/dpays/dpay-desktop/issues"
   },
   "keywords": [
     "dpay",
     "blockchain",
     "wallet"
   ],
-  "homepage": "https://github.com/dpays/dwallet",
+  "homepage": "https://github.com/dpays/dpay-desktop",
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",

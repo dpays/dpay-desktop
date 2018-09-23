@@ -44,7 +44,7 @@ class MenuBar extends Component {
       <Menu vertical fixed="left" color="blue" inverted icon="labeled">
         <Menu.Item header>
           <img
-            alt="dWallet"
+            alt="dPay"
             className="ui tiny image"
             src={src}
             style={{
@@ -53,7 +53,7 @@ class MenuBar extends Component {
               margin: '0 auto 1em',
             }}
           />
-          Vessel
+          dPay
         </Menu.Item>
         <Link className="link item" to="/transactions">
           <Icon name="dashboard" />

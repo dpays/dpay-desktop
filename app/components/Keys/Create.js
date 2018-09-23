@@ -153,7 +153,7 @@ export default class KeysCreate extends Component {
     });
 
     function setClipboardText(text){
-      var id = "vessel-clipboard-textarea-hidden-id";
+      var id = "dpay-clipboard-textarea-hidden-id";
       var existsTextarea = document.getElementById(id);
 
       if(!existsTextarea){
@@ -310,7 +310,7 @@ export default class KeysCreate extends Component {
                     <Message
                       icon='warning sign'
                       header='Ready to create?'
-                      content='Ensure the steps above are completed and the data above has been copied elsewhere. The data displayed here can never be retrieved through Vessel again.'
+                      content='Ensure the steps above are completed and the data above has been copied elsewhere. The data displayed here can never be retrieved through dPay Wallet again.'
                     />
 
                   </Grid.Column>
@@ -369,7 +369,7 @@ export default class KeysCreate extends Component {
                 <List.Item>Enter an account name to see if it is available.</List.Item>
                 <List.Item>Click <strong>Generate Account</strong> to create the password and keys, while reviewing it's information.</List.Item>
                 <List.Item>If everything looks good, click <strong>Create</strong> to submit the details to the blockchain, as well as funding it's initial balance.</List.Item>
-                <List.Item>Once the account has been created, it will be automatically imported into Vessel, and you can use either the <strong>Master Password</strong> or the <strong>Posting Private Key</strong> to log into dSite or any dPay powered website.</List.Item>
+                <List.Item>Once the account has been created, it will be automatically imported into dPay Wallet, and you can use either the <strong>Master Password</strong> or the <strong>Posting Private Key</strong> to log into dSite or any dPay powered website.</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={9}>

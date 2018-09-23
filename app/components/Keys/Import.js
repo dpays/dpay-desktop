@@ -154,7 +154,7 @@ export default class KeysImport extends Component {
       encryptionWarning = (
         <Message
           header="Notice about Encryption"
-          content="The wallet password if only used to unlock Vessel during transactions. If you lose your password, you will be unable to recover your keys. Please make sure to back up your keys and remember your password."
+          content="The wallet password if only used to unlock dPay Wallet during transactions. If you lose your password, you will be unable to recover your keys. Please make sure to back up your keys and remember your password."
         />
       );
     }

@@ -45,13 +45,13 @@ export default class MenuBuilder {
 
   buildDarwinTemplate() {
     const subMenuAbout = {
-      label: 'Vessel',
+      label: 'dPay',
       submenu: [
-        { label: 'About Vessel', selector: 'orderFrontStandardAboutPanel:' },
+        { label: 'About dPay Wallet', selector: 'orderFrontStandardAboutPanel:' },
         { type: 'separator' },
         { label: 'Services', submenu: [] },
         { type: 'separator' },
-        { label: 'Hide Vessel', accelerator: 'Command+H', selector: 'hide:' },
+        { label: 'Hide dPay Wallet', accelerator: 'Command+H', selector: 'hide:' },
         { label: 'Hide Others', accelerator: 'Command+Shift+H', selector: 'hideOtherApplications:' },
         { label: 'Show All', selector: 'unhideAllApplications:' },
         { type: 'separator' },
@@ -98,9 +98,9 @@ export default class MenuBuilder {
     const subMenuHelp = {
       label: 'Help',
       submenu: [
-        { label: 'Source Code (Github)', click() { shell.openExternal('https://github.com/aaroncox/vessel'); } },
-        { label: 'Report Bug (Github)', click() { shell.openExternal('https://github.com/aaroncox/vessel/issues'); } },
-        { label: 'Releases (Github)', click() { shell.openExternal('https://github.com/aaroncox/vessel/releases'); } }
+        { label: 'Source Code (Github)', click() { shell.openExternal('https://github.com/dpays/dpay-desktop'); } },
+        { label: 'Report Bug (Github)', click() { shell.openExternal('https://github.com/dpays/dpay-desktop/issues'); } },
+        { label: 'Releases (Github)', click() { shell.openExternal('https://github.com/dpays/dpay-desktop/releases'); } }
       ]
     };
 
@@ -174,9 +174,9 @@ export default class MenuBuilder {
     }, {
       label: 'Help',
       submenu: [
-        { label: 'Source Code (Github)', click() { shell.openExternal('https://github.com/aaroncox/vessel'); } },
-        { label: 'Report Bug (Github)', click() { shell.openExternal('https://github.com/aaroncox/vessel/issues'); } },
-        { label: 'Releases (Github)', click() { shell.openExternal('https://github.com/aaroncox/vessel/releases'); } }
+        { label: 'Source Code (Github)', click() { shell.openExternal('https://github.com/dpays/dpay-desktop'); } },
+        { label: 'Report Bug (Github)', click() { shell.openExternal('https://github.com/dpays/dpay-desktop/issues'); } },
+        { label: 'Releases (Github)', click() { shell.openExternal('https://github.com/dpays/dpay-desktop/releases'); } }
       ]
     }];
 
